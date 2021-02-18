@@ -817,15 +817,7 @@ a:focus, a:active {
   max-width: 1170px;
 }
 
-.header-text{
-  text-transform: uppercase;
-  font-weight: 200;
-  color: #333;
-  margin-bottom: 20px;
-  font-size: 30px;
-  position: relative;
-  line-height: 24px;
-}
+
 
 .landing-page .navbar-top {
   position: absolute;
@@ -1548,9 +1540,6 @@ a:focus, a:active {
   }
 }
 
-.header-text{
-  font-family: 'Open Sans', sans-serif;
-}
 
 .navbar {
   text-transform: uppercase;
@@ -1620,4 +1609,34 @@ a:focus, a:active {
   max-width: 75%;
 }
 
+#navLogo{
+  height: 4rem;
+}
 
+.logo-lumi{
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.header-text{
+  text-transform: uppercase;
+  font-weight: 1000;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 30px;
+  position: relative;
+  line-height: 24px;
+}
+
+.sub-title{
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 20px;
+  position: relative;
+  line-height: 24px;
+}
