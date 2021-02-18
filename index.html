@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Theme Made By www.w3schools.com -->
+    <title>Personal Data Marketplace </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        #my-navbar-collapse {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 280px;
+            /*example + never use min-width with this solution */
+            height: 100%;
+        }
+
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+			padding:3%;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #303030;
+            font-weight: 600;
+         
+        }
+		
+
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+            
+        }
+
+        .jumbotron {
+            background-color: #f4511e;
+            color: #fff;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+
+        .logo {
+            color: #f4511e;
+            font-size: 200px;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+        img {	
+            display: block;	
+            margin-left: auto;	
+            margin-right: auto;	
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+
+        .carousel-control.right,
+        .carousel-control.left {
+            background-image: none;
+            color: #f4511e;
+        }
+
+        .carousel-indicators li {
+            border-color: #f4511e;
+        }
+
+        .carousel-indicators li.active {
+            background-color: #f4511e;
+        }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel {
+            border: 1px solid #f4511e;
+            border-radius: 0 !important;
+            transition: box-shadow 0.5s;
+        }
+
+        .panel:hover {
+            box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+        }
+
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #fff !important;
+            color: #f4511e;
+        }
+
+        .panel-heading {
+            color: #fff !important;
+            background-color: #f4511e !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .panel-footer {
+            background-color: white !important;
+        }
+
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .panel-footer .btn {
+            margin: 15px 0;
+            background-color: #f4511e;
+            color: #fff;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: #f4511e !important;
+            background-color: #fff !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+		.column {
+		  float: left;
+		  width: 33.33%;
+		  padding: 5px;
+		}
+
+		/* Clear floats after image containers */
+		.row::after {
+		  content: "";
+		  clear: both;
+		  display: table;
+		}
+
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #f4511e;
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+        }
+    </style>
+</head>
+
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <!-- Sidebar -->
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="slide-collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#Problem">Problem</a></li>
+					  <li><a href="#Personas">Personas</a></li>
+                    <li><a href="#userresearch">User Research</a></li>
+                    <li><a href="#Design">Design from A to Z</a></li>
+					    <li><a href="#Userflow">User flow</a></li>
+                   
+                  
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div><br><br></div>
+	
+	<h1>Jennifer Abou Jaoudi 40038753 </h1>
+
+    <!-- Container (About Section) -->
+    <div id="Problem" class="">
+        <div class="row">
+            <div class="col-sm-8">
+              <h1 style="color:black;">DO YOU KNOW ?</h1>
+                <h3 style="color:black;"> Your personal data is worth <span style="color:green;font-weight:bold;font-size:40px;">$$ </span></h3>
+                <p>People shares everyday personal data without even realizing.
+                    While using GPS location, fitness application, music application or any other application through
+                    your device, you are sharing your personal information with the application itself.<br>Many companies are willing to buy big amount of personal data for their benefit.<br>In this application, we will analysis a case how personal data can be used.</p>
+
+                <h4 style="color:black;">Let's examine a Recipe Marketplace</h4>
+				<p>We all know someone that has a great recipe or cook amazing food. Have you already asked someone to give you a recipe of the food they prepared? Most of as have! </p>
+				
+				<h4>Do you have a great food product or idea you want to launch into the marketplace?</h4>
+				<p>Nowadays, when we search for a recipe, we google it or look into a recipe book. But now, by simple clicks you can access to the most amazing chef's receipe and you can even sell a receipe that you have created and tastes good.</p>
+               
+                <p> Most of the people aren't aware that selling their personal data can make them a lot of money. 
+					In order to help people to get an idea of selling or buying some amazing recipes, we decided to
+                    create this marketplace application. </p>
+                
+            </div>
+            <div class="col-sm-4">
+                <br> <span class="glyphicon glyphicon-signal logo"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container (Services Section) -->
+    <div id="Personas" class="bg-grey">
+        <h3 style="color:black;">Analyze different user types</h3>
+      
+        <p>Customers have several needs when searching for a recipe. Some look for pricing, some for quantities and others
+            for qualities. It is important to analyze your customers needs in order to make your sell, a recursive sell.
+            Remember, as Jihm Rohn once said, if you make a sale, you can make a living. If you make an investment of
+            time and good service in a customer, you can make a fortune. This is why we need to undertand users needs,
+            experiences, behaviors and goals. </p>
+<p>Three personas has been analysed. The first is about a person that cooks since she was young and would like to sell her recipes. The second persona is about a old couple who really like to try new recipes and is willing to pay for one recipe per month. The third person is simply someone who would like to find an alternative of always playing video games and would like to do more monney. He found that trying some recipes and sell them will make him make some extra money.</p>
+        <div class="container">
+            <h2>Personas</h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+					
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="FinalDesigns/Personas/P1.png" alt="Los Angeles" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="FinalDesigns/Personas/P2.png" alt="Los Angeles" style="width:100%;">
+                    </div>
+                    <div class="item">
+                        <img src="FinalDesigns/Personas/P3.png" alt="Los Angeles" style="width:100%;">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+ </div>
+ 
+ <!--research-->
+        <h2>User Reseach</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+ 
+    <!-- Container (Contact Section) -->
+    <div id="userresearch" class="">
+        <h4>Know more about the people that you will be dealing with</h4>
+        <h3 style="color:black;text-align:left;">Rule #1</h3>
+        <p style="color:black;text-align:left;">While designing a UX website, it is important to understand the users that you will be dealing with <br>We decided to create a <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0smHQTgqBNOrk3dUojkBCJSsCRLHmB6NzF32SaN57RWBOKQ/viewform"> survey </a> that we published on Facebook and with our friends to reach the maximum number of people. The purpose of this survey was to know more about the people that are aware that selling personal information exists and evaluate those that might be intrested in selling or buying recipes.</p>
+    </div>
+	<h3>The following questions has been asked:</h3>
+	
+	<h4>Do you know that your personal data is worth money? </h4>
+	<img src="FinalDesigns/Research/1.png" alt="Snow" style="width:50%">
+	<h4>Do you think big companies uses your data for their own benefit?</h4>
+	<img src="FinalDesigns/Research/2.png" alt="Snow" style="width:50%">
+	<h4>How do you feel now that you know that companies uses your data?</h4>
+	<img src="FinalDesigns/Research/3.png" alt="Snow" style="width:50%">
+	<h4>Would you sell your data in exchange of monetary compensation?</h4>
+	<img src="FinalDesigns/Research/4.png" alt="Snow" style="width:50%">
+	<h4>What personal data would you be willing to sell? </h4>
+	<img src="FinalDesigns/Research/5.png" alt="Snow" style="width:50%">
+	<h4>How much do you think is the value of your personal data</h4>
+	<img src="FinalDesigns/Research/6.png" alt="Snow" style="width:50%">
+	<h4>What type of food do you prefer?<h4>
+		<img src="FinalDesigns/Research/7.png" alt="Snow" style="width:50%">
+	<h4>How much are you willing to pay to get someone‘s good recipe?<h4>
+		<img src="FinalDesigns/Research/8.png" alt="Snow" style="width:50%">
+	<h4>Have you thought of selling one of your recipes that everyone loves? <h4>
+		<img src="FinalDesigns/Research/9.png" alt="Snow" style="width:50%">
+   
+    	
+        <h2 style="">Quotes</h2>	
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+				
+            <!-- Indicators -->	
+            <ol class="carousel-indicators">	
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>	
+                <li data-target="#myCarousel" data-slide-to="1"></li>	
+                <li data-target="#myCarousel" data-slide-to="2"></li>	
+            </ol>	
+            <!-- Wrapper for slides -->	
+            <div class="carousel-inner" role="listbox">	
+                <div class="item active">	
+                    <h4>"Everyone loves my pie recipe. This recipe has been taught by my amazing grandmother. I may sell it now!"<br><span>Jennifer AJAY</span></h4>	
+                </div>	
+                <div class="item">	
+                    <h4>"I bake since I was 10. Would love to share my talent and amazing recipes. And would love to do money while being at school at the same time just by posting my recipes online."<br><span>Jayne Mary Loola</span></h4>	
+                </div>	
+                <div class="item">	
+                    <h4>"Didn't know we can sell our personal data.. surprised"<br><span>Chanty Holy</span></h4>	
+                </div>	
+            </div>	
+            <!-- Left and right controls -->	
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">	
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>	
+                <span class="sr-only">Previous</span>	
+            </a>	
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">	
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>	
+                <span class="sr-only">Next</span>	
+            </a>	
+        </div>	
+    </div>
+	
+	<!--design from A to Z-->
+	<div id="Design">
+		 <h2>Design from A to Z</h2>
+		 <p>The first step was to draw a basic concept. Then we refined the concept further to finaly create a visual graphic representation including all necessary content.</p>
+		 <h3>Design explanation</h3>
+		 <h4>Choice of color</h4>
+		 <p>The color orange has been chosen to design this application. This color is proved to make people feel hungy. </p>
+		 <h4>User friendly </h4>
+		 <p>This application may be used by different types of users. A 12 year old as a 60 year old may use this application without any confusion. By simple clicks, the user can have a look at his profile, his own recipes and his wallet. He can also see what is for sale and what he sold to keep track of the marketplace.  </p>
+         <img src="designSteps.png" class="w3-image w3-greyscale-min" style="width: 100%;"	height="100%">
+	            
+		<div class="row">
+			<h4>Login Page</h4>
+		  <div class="column">
+		    <img src="FinalDesigns/1LoginPage/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		    <img src="FinalDesigns/1LoginPage/wireframe.png" alt="Forest" style="width:100%">
+		  </div>
+		  <div class="column">
+		    <img src="FinalDesigns/1LoginPage/mockup.png" alt="Mountains" style="width:100%">
+		  </div>
+		</div>
+		<div class="row">
+			<h4>Register Page</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/2RegisterPage/Sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/2RegisterPage/Wireframe.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/2RegisterPage/mockup.png" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+		<div class="row">
+			<h4>Forgot Password?</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/3.1ForgotPassword/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/3.1ForgotPassword/wireframe.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/3.1ForgotPassword/mockup.png" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+		<div class="row">
+			<h4>Reset Password</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/3.2ResetPassword/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/3.2ResetPassword/wireframe.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/3.2ResetPassword/mockup.png" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+		<div class="row">
+  			<h4>Main Menu Page</h4>
+  		  <div class="column">
+  		     <img src="FinalDesigns/3MainMenu/sketch.png" alt="Snow" style="max-width:100%;
+  max-height:50%;">
+  		  </div>
+  		  <div class="column">
+  		     <img src="FinalDesigns/3MainMenu/Wireframe.png" alt="Snow" style="width:100%">
+  		  </div>
+  		  <div class="column">
+  		     <img src="FinalDesigns/3MainMenu/Mockup.png" alt="Snow" style="width:100%">
+  		  </div>
+		</div>
+		<div class="row">
+			<h4>My Profil Page</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/4MyProfil/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/4MyProfil/wireframe.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/4MyProfil/mockup.png" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+		<div class="row">
+			<h4>Add new billing card Page</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/4.1AddCard/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/4.1AddCard/Wireframe.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/4.1AddCard/mockup.png" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+		</div>
+		<div class="row">
+			<h4>My Recipe Page (Choice - Part 1)</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/5MyRecipes/choice/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/5MyRecipes/choice/wireframe.PNG" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/5MyRecipes/choice/mockup.PNG" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+		<div class="row">
+			<h4>My Recipe Page (View Recipe - Part 2)</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/5MyRecipes/myrecipe/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/5MyRecipes/myrecipe/wireframe2.PNG" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/5MyRecipes/myrecipe/mockup2.PNG" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+		<div class="row">
+			<h4>My wallet Page</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/6MyWallet/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/6MyWallet/wireframe.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/6MyWallet/mockup.png" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+		</div>
+		<div class="row">
+			<h4>Buy Recipes Page (Add to cart)</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/8BuyRecipes/add/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/8BuyRecipes/add/wireframe2.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/8BuyRecipes/add/mockup2.png" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+		<div class="row">
+			<h4>Buy Recipes Page (View recipe before buying)</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/8BuyRecipes/view/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/8BuyRecipes/view/wireframe.PNG" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/8BuyRecipes/view/mockup.PNG" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+		<div class="row">
+			<h4>My Cart Page</h4>
+		  <div class="column">
+		     <img src="FinalDesigns/9Mycart/sketch.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/9Mycart/wireframe.png" alt="Snow" style="width:100%">
+		  </div>
+		  <div class="column">
+		     <img src="FinalDesigns/9Mycart/mockup.png" alt="Snow" style="width:100%">
+		  </div>
+		</div>
+	</div>
+    <!--User Flow-->
+      <h2>User Flow</h2>
+	  
+	    <img src="FinalDesigns/userflow.png" alt="Snow" style="width:100%">
+	  <img src="FinalDesigns/userflow2.png" alt="Snow" style="width:100%">
+	  
+    <footer class="container-fluid text-center">
+        <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+    
+    </footer>
+
+    <script>
+        $('[data-toggle="slide-collapse"]').on('click', function () {
+            $navMenuCont = $($(this).data('target'));
+            $navMenuCont.animate({ 'width': 'toggle' }, 350);
+        });
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+
+</body>
+
+</html>
