@@ -1447,7 +1447,7 @@ a:focus, a:active {
 .header-text{
   text-transform: uppercase;
   font-weight: 1000;
-  color: #2582a0;
+  color: #333;;
   margin-bottom: 20px;
   font-size: 40px;
   position: relative;
@@ -1457,7 +1457,7 @@ a:focus, a:active {
 .sub-title{
   text-transform: uppercase;
   font-weight: 800;
-  color: #4fafcf;
+  color: #333;;
   margin-bottom: 20px;
   font-size: 25px;
   position: relative;
