@@ -22,6 +22,8 @@
 /*     General overwrite     */
 body {
   font-family: "Open Sans",sans-serif;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 a {
@@ -1513,4 +1515,10 @@ table{
   width: 900px;
   height: 75px;
   position: center;
+}
+
+.journeymap{
+  max-height: 100%;
+  max-width: 100%;
+
 }
