@@ -1359,6 +1359,10 @@ a:focus, a:active {
   }
 }
 
+.table-custom-info {
+  background-color: #d9edf7;
+  font-weight: 900;
+}
 
 .navbar {
   text-transform: uppercase;
