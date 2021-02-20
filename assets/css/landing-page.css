@@ -24,6 +24,7 @@ body {
   font-family: "Open Sans",sans-serif;
   text-align: justify;
   text-justify: inter-word;
+  font-weight: 400;
 }
 
 a {
@@ -1507,7 +1508,7 @@ p {
   font-family: "Open Sans";
   font-size: 18px;
   line-height: 1.5;
-  font-weight: 100;
+  font-weight: bold;
 }
 
 table{
@@ -1520,5 +1521,9 @@ table{
 .journeymap{
   max-height: 100%;
   max-width: 100%;
+}
 
+.flow{
+  max-height: 80%;
+  max-width: 80%;
 }
